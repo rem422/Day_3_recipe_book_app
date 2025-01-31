@@ -5,7 +5,6 @@ const recipeListEl = document.getElementById("recipe_list");
 // Display the elements to the DOM
 const displayRecipes = (recipes) => {
     recipeListEl.innerHTML = "";
-
     recipes.forEach((recipe) => {
         const recipeItemEl = document.createElement('li');
         recipeItemEl.classList.add("recipe_item");
