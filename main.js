@@ -1,9 +1,6 @@
-let MY_API_KEY = "0832e0f8de16440f9a9c1482225c8ecf";
-
-
+API_KEY = "0832e0f8de16440f9a9c1482225c8ecf";
 
 const recipeListEl = document.getElementById("recipe_list");
-
 
 // Display the elements to the DOM
 const displayRecipes = (recipes) => {
@@ -40,8 +37,8 @@ const displayRecipes = (recipes) => {
 };
 
 //Fetching data from an API
-async function getRecipes(){
-    const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${myApiKey}`);
+const getRecipes = async () => {
+    const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${API_KEY}`);
 
     const data = await response.json();
 
@@ -49,7 +46,7 @@ async function getRecipes(){
 }
 
 //Initializing the fetched data
-async function init (){
+const init = async () => {
     const recipes = await getRecipes();
     displayRecipes(recipes);
     console.log(recipes);
