@@ -18,12 +18,13 @@ const displayRecipes = (recipes) => {
 
         const recipeIngridientsEl = document.createElement('p');
         recipeIngridientsEl.innerHTML = `
-        < Strong> Ingredients:</Strong> 
+        <strong>Ingredients:</strong> 
         ${recipe.extendedIngredients.map((ingredient) => ingredient.original).join(", ")}
         `;
         
         const recipeLinkEl = document.createElement('a');
         recipeLinkEl.href = recipe.sourceUrl;
+        recipeLinkEl.target = "_blank";
         recipeLinkEl.innerText = "View Recipe";
 
         recipeItemEl.appendChild(recipeImageEl);
